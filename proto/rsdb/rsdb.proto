@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "rsdb";
+option java_outer_classname = "RsdbProto";
+
+package rsdb;
+
+// The greeting service definition.
+service Rsdb {
+    // Set
+    rpc SetString (SetStringRequest) returns (SetStringReply) {}
+}
+
+// The request message containing the user's name.
+message SetStringRequest {
+    string key = 1;
+    string val = 2;
+}
+
+// The response message containing the greetings
+message SetStringReply {
+    int64 status = 1;
+}
